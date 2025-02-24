@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Анкета пользователя</title>
+   </head>
+   <body>
+       <h1>Анкета пользователя</h1>
+       <form method="post">
+           <label for="name">Имя:</label>
+           <input type="text" id="name" name="name" required><br><br>
+
+           <label for="city">Город:</label>
+           <input type="text" id="city" name="city" required><br><br>
+
+           <label for="hobby">Хобби:</label>
+           <input type="text" id="hobby" name="hobby" required><br><br>
+
+           <label for="age">Возраст:</label>
+           <input type="number" id="age" name="age" required><br><br>
+
+           <input type="submit" value="Отправить">
+       </form>
+
+       {% if user_data %}
+       <h2>Введенные данные:</h2>
+       <ul style="list-style-type: none;">
+    <li>Имя: {{ user_data.name }}</li>
+    <li>Город: {{ user_data.city }}</li>
+    <li>Хобби: {{ user_data.hobby }}</li>
+    <li>Возраст: {{ user_data.age }}</li>
+       </ul>
+       {% endif %}
+   </body>
+   </html>
